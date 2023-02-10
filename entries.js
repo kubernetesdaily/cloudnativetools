@@ -19,6 +19,30 @@
 const entries = [
   //A
 
+  //b 
+
+
+  //c
+
+  //d
+
+
+  // f
+
+  // g
+
+  // h 
+
+  // i 
+
+  // g 
+
+  // k
+
+  // l
+
+
+
   // M
 	{
 		title: "Monokle",
@@ -27,4 +51,38 @@ const entries = [
 		tag: "Cluster Management",
 		github: "kubeshop/monokle",
 	}
+
+	//N 
+
+
+	// O 
+
+
+	// P 
+
+	// Q 
+
+	// R 
+
+	// S
+
+	// T 
+
+	// U 
+
+
+	// V 
+
+
+	// W 
+
+
+	// X 
+
+
+	// Y 
+
+	// Z 
+	
+
 ];
