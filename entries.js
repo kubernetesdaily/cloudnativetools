@@ -142,7 +142,7 @@ const entries = [
 	tag: "Cluster Management",
 	github: "scality/metalk8s",
 },
-{   title: "Monokle",
+{   title: "monokle",
     filename: "",
 	description: "Monokle streamlines the process of creating, analyzing, and deploying Kubernetes configurations by providing a unified visual tool for authoring YAML manifests, validating policies, and managing live clusters.",
 	tag: "Cluster Management",
