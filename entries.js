@@ -135,6 +135,13 @@ const entries = [
 	tag: "Cluster Management",
 	github: "poseidon/matchbox",
 },
+
+{   title: "monokle",
+    filename: "",
+	description: "Monokle streamlines the process of creating, analyzing, and deploying Kubernetes configurations by providing a unified visual tool for authoring YAML manifests, validating policies, and managing live clusters.",
+	tag: "Cluster Management",
+	github: "kubeshop/monokle",
+}
   {
 	title: "metalk8s",
 	filename: "",
@@ -142,12 +149,7 @@ const entries = [
 	tag: "Cluster Management",
 	github: "scality/metalk8s",
 },
-{   title: "monokle",
-    filename: "",
-	description: "Monokle streamlines the process of creating, analyzing, and deploying Kubernetes configurations by providing a unified visual tool for authoring YAML manifests, validating policies, and managing live clusters.",
-	tag: "Cluster Management",
-	github: "kubeshop/monokle",
-},
+
 
 	//N 
 
