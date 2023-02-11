@@ -141,7 +141,7 @@ const entries = [
 	description: "Monokle streamlines the process of creating, analyzing, and deploying Kubernetes configurations by providing a unified visual tool for authoring YAML manifests, validating policies, and managing live clusters.",
 	tag: "Cluster Management",
 	github: "kubeshop/monokle",
-}
+},
   {
 	title: "metalk8s",
 	filename: "",
