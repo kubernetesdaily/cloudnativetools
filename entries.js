@@ -21,18 +21,18 @@ const entries = [
 
   //b 
 
-  {
+{
 	title: "breeze",
 	filename: "",
 	description: "Deploy a Production Ready Kubernetes Cluster with graphical interface",
 	tag: "Cluster Management",
 	github: "wise2c-devops/breeze",
-  },
+},
 
 
   //c
 
-  {
+{
 	title: "clusterman",
 	filename: "",
 	description: "Clusterman - Autoscale and Manage your compute clusters",
@@ -49,7 +49,7 @@ const entries = [
 
   // h 
 
-  {
+{
 	title: "harvester",
 	filename: "",
 	description: "Open source hyperconverged infrastructure (HCI) software",
@@ -72,7 +72,7 @@ const entries = [
 	github: "kubernetes-sigs/kind",
 },
 
-  {
+{
 	title: "kOps",
 	filename: "",
 	description: "Kubernetes Operations (kOps) - Production Grade k8s Installation, Upgrades and Management",
