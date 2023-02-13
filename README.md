@@ -2,7 +2,7 @@
 
 
 
-### [View Submissions]()
+### [View Submissions](https://github.com/sangam14/Kubernetes-CloudNative-Toolkits/blob/main/entries.js)
 
 ## Rules
 
@@ -15,14 +15,15 @@
  5. Make a pull request to master from your forked repo.
 
  
-
-
-_If you write a blog or post about the challenge, feel free to add to the list_
- 
-
-
- ## Useful Links
-
-
 ## Contributors
+
+
+We ❤️ contributions big or small.
+
+### Thanks to all our contributors!
+
+<a href="https://github.com/sangam14/Kubernetes-CloudNative-Toolkits/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sangam14/Kubernetes-CloudNative-Toolkits" />
+</a>
+<!--  https://contrib.rocks -->
 
