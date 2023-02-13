@@ -19,6 +19,14 @@
 const entries = [
   //A
 
+  {
+	title: "aptakub",
+	filename: "",
+	description: "A modern, lightweight and multi-cluster desktop client for Kubernetes. Connect to multiple clusters simultaneously to view, edit and manage all your resources.",
+	tag: "Development Tools",
+ 	github: "aptakube/aptakube",
+},
+
   //b 
 
 {
@@ -84,6 +92,22 @@ const entries = [
 
   // g
 
+  {
+	title: "garden",
+	filename: "",
+	description: "Garden provides production-like Kubernetes testing environments for integration tests, QA, and development.",
+	tag: "Development Tools",
+	github: "garden-io/garden",
+},
+
+{
+	title: "gefyra",
+	filename: "",
+	description: "Gefyra blazingly-fast, rock-solid, local application development ➡️ with Kubernetes.",
+	tag: "Development Tools",
+	github: "gefyrahq/gefyra",
+},
+
 
 
 
@@ -109,7 +133,15 @@ const entries = [
 
   // i 
 
-  // g 
+  // j
+
+  {
+	title: "jkube",
+	filename: "",
+	description: "Tools and plugins for Java developers that help you create container images along with the required manifests to deploy your applications to Kubernetes.",
+	tag: "Development Tools",
+	github: "eclipse/jkube",
+},
 
   // k
 
@@ -138,6 +170,23 @@ const entries = [
 },
 
 {
+	title: "ko",
+	filename: "",
+	description: "ko is a tool for building and deploying Golang applications to Kubernetes.",
+	tag: "Development Tools",
+	github: "ko-build/ko",
+},
+
+
+{
+	title: "konfig",
+	filename: "",
+	description: "Konfig is a Kubernetes friendly Rails gem. It can load configuration and secrets from both YAML or folders with individual files and present them to your application the same way.",
+	tag: "Development Tools",
+	github: "cloud66-oss/konfig",
+},
+
+{
 	title: "kOps",
 	filename: "",
 	description: "Kubernetes Operations (kOps) - Production Grade k8s Installation, Upgrades and Management",
@@ -161,6 +210,24 @@ const entries = [
 	tag: "Cluster Management",
 	github: "kubenav/kubenav",
 },
+
+
+{
+	title: "kubectl-warp",
+	filename: "",
+	description: "Kubernetes CLI plugin for syncing and executing local files in Pod on Kubernetes",
+	tag: "Development Tools",
+	github: "ernoaapa/kubectl-warp",
+},
+
+{
+	title: "kubernix",
+	filename: "",
+	description: "This project aims to provide single dependency Kubernetes clusters for local testing, experimenting and development purposes.",
+	tag: "Development Tools",
+	github: "saschagrunert/kubernix",
+},
+
 
 
 
@@ -206,6 +273,14 @@ const entries = [
 	github: "kubernetes-sigs/kubespray",
 },
 
+
+{
+	title: "kubevious",
+	filename: "",
+	description: "Kubevious renders all configurations relevant to the application in one place. That saves a lot of time from operators, eliminating the need for looking up settings and digging within selectors and labels.",
+	tag: "Development Tools",
+	github: "kubevious/Kubevious",
+},
 
 {
 	title: "kops",
@@ -300,8 +375,13 @@ const entries = [
 
 	// O 
 
-	
-	
+	{
+		title: "okteto",
+		filename: "",
+		description: "okteto accelerates the development workflow of Kubernetes applications.",
+		tag: "Development Tools",
+		github: "okteto/okteto",
+	},
 
 	// P 
 
@@ -330,7 +410,29 @@ const entries = [
 		tag: "Cluster Management",
 		github: "grafana/tanka",
 	},
-	
+	{
+		title: "telepresence",
+		filename: "",
+		description: "Telepresence provides fast, realistic local development for Kubernetes microservices.",
+		tag: "Development Tools",
+		github: "telepresenceio/telepresence",
+	},
+
+	{
+		title: "tilt",
+		filename: "",
+		description: "Tilt powers multi-service development and makes sure they behave.",
+		tag: "Development Tools",
+		github: "tilt-dev/tilt",
+	},
+
+	{
+		title: "tye",
+		filename: "",
+		description: "Tye is a developer tool that makes developing, testing, and deploying microservices and distributed applications easier.",
+		tag: "Development Tools",
+		github: "dotnet/tye",
+	},
 
 	{
 		title: "typhoon",
