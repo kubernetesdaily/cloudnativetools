@@ -40,14 +40,56 @@ const entries = [
 	github: "Yelp/clusterman",
 },
 
+{
+	title: "claudie",
+	filename: "",
+	description: "Cloud-agnostic managed Kubernetes",
+	tag: "Cluster Management",
+	github: "berops/claudie",
+},
+
+{
+	title: "cluster-api",
+	filename: "",
+	description: "Home for Cluster API, a subproject of sig-cluster-lifecycle",
+	tag: "Cluster Management",
+	github: "kubernetes-sigs/cluster-api",
+},
+
+{
+	title: "clusterpedia",
+	filename: "",
+	description: "Clusterpedia is used for complex resource searches across multiple clusters, support simultaneous search of a single kind of resource or multiple kinds of resources existing in multiple clusters",
+	tag: "Cluster Management",
+	github: "clusterpedia-io/clusterpedia",
+},
+
+
   //d
+
+
+  // e
+
+
+{
+	title: "eksctl",
+	filename: "",
+	description: "Home for Cluster API, a subproject of sig-cluster-lifecycle",
+	tag: "Cluster Management",
+	github: "weaveworks/eksctl",
+},
 
 
   // f
 
   // g
 
+
+
+
+
   // h 
+
 
 {
 	title: "harvester",
@@ -57,12 +99,27 @@ const entries = [
 	github: "harvester/harvester",
 },
 
+{
+	title: "hierarchical-namespaces",
+	filename: "",
+	description: "Hierarchical namespaces make it easier to share your cluster by making namespaces more powerful.",
+	tag: "Cluster Management",
+	github: "kubernetes-sigs/hierarchical-namespaces",
+},
 
   // i 
 
   // g 
 
   // k
+
+  {
+	title: "keda",
+	filename: "",
+	description: "Event-driven Autoscaling in Kubernetes",
+	tag: "Cluster Management",
+	github: "kedacore/keda",
+},
 
   {
 	title: "kind",
@@ -73,12 +130,40 @@ const entries = [
 },
 
 {
+	title: "kruise",
+	filename: "",
+	description: "Kruise consists of several controllers which extend and complement the Kubernetes core controllers for workload management.",
+	tag: "Cluster Management",
+	github: "openkruise/kruise",
+},
+
+{
 	title: "kOps",
 	filename: "",
 	description: "Kubernetes Operations (kOps) - Production Grade k8s Installation, Upgrades and Management",
 	tag: "Cluster Management",
 	github: "kubernetes/kops",
 },
+
+
+{
+	title: "kubedirector",
+	filename: "",
+	description: "KubeDirector uses standard Kubernetes (K8s) facilities of custom resources and API extensions to implement stateful scaleout application clusters.",
+	tag: "Cluster Management",
+	github: "bluek8s/kubedirector",
+},
+
+{
+	title: "kubenav",
+	filename: "",
+	description: "kubenav is the navigator for your Kubernetes clusters right in your pocket",
+	tag: "Cluster Management",
+	github: "kubenav/kubenav",
+},
+
+
+
 
 
 {
@@ -114,17 +199,58 @@ const entries = [
 },
 
 {
-	title: "kubeone",
+	title: "kubespray",
 	filename: "",
-	description: "Kubermatic KubeOne automate cluster operations on all your cloud, on-prem, edge, and IoT environments",
+	description: "Deploy a Production Ready Kubernetes Cluster",
 	tag: "Cluster Management",
-	github: "kubermatic/kubeone",
+	github: "kubernetes-sigs/kubespray",
+},
+
+
+{
+	title: "kops",
+	filename: "",
+	description: "Kubernetes Operations (kOps) - Production Grade k8s Installation, Upgrades and Management",
+	tag: "Cluster Management",
+	github: "kubernetes/kops",
+},
+
+
+
+{
+	title: "k0s",
+	filename: "",
+	description: "k0s - The Zero Friction Kubernetes",
+	tag: "Cluster Management",
+	github: "k0sproject/k0s",
+},
+
+{
+	title: "k3d",
+	filename: "",
+	description: "k3d,and Windows.,destroy,half the memory,highly available,is a tool for running local k3s clusters in docker. It's a single binary about 20 MB. You need to have docker installed.",
+	tag: "Cluster Management",
+	github: "k3d-io/k3d",
+},
+
+{
+	title: "k3s",
+	filename: "",
+	description: "Lightweight Kubernetes. Easy to install,Kubernetes clusters from the command line ",
+	tag: "Cluster Management",
+	github: "https://github.com/rancher/k3s",
 },
 
 
   // l
 
-  
+  {
+	title: "liqo",
+	filename: "",
+	description: "Liqo implements Dynamic resource sharing across different Kubernetes clusters (e.g.; offloading pods and services), supporting decentralized governance",
+	tag: "Cluster Management",
+	github: "liqotech/liqo",
+},
 
   // M
 
@@ -150,19 +276,31 @@ const entries = [
 	github: "scality/metalk8s",
 },
 
+{
+	title: "microk8s",
+	filename: "",
+	description: "MicroK8s is a small, fast, single-package Kubernetes for developers, IoT and edge",
+	tag: "Cluster Management",
+	github: "canonical/microk8s",
+},
+
+{
+	title: "minikube",
+	filename: "",
+	description: "minikube implements a local Kubernetes cluster on macOS,Linux,all in a binary less than 100 MB.",
+	tag: "Cluster Management",
+	github: "kubernetes/minikube",
+},
+
+
+
 
 	//N 
 
 
 	// O 
 
-	{
-		title: "k0s",
-		filename: "",
-		description: "k0s - The Zero Friction Kubernetes ",
-		tag: "Cluster Management",
-		github: "k0sproject/k0s",
-	},
+	
 	
 
 	// P 
@@ -181,19 +319,18 @@ const entries = [
 		github: "labring/sealos",
 	},
 
-	
-
-	{
-		title: "silver-surfer",
-		filename: "",
-		description: "An OpenSource project to check ApiVersion compatibility and provide Migration path for Kubernetes objects when upgrading Kubernetes to latest versions. ",
-		tag: "Cluster Management",
-		github: "devtron-labs/silver-surfer",
-	},
-
 
 
 	// T 
+
+	{
+		title: "tanka",
+		filename: "",
+		description: "The clean, concise and super flexible alternative to YAML for your Kubernetes cluster.",
+		tag: "Cluster Management",
+		github: "grafana/tanka",
+	},
+	
 
 	{
 		title: "typhoon",
