@@ -26,5 +26,4 @@ We ❤️ contributions big or small.
 <a href="https://github.com/sangam14/Kubernetes-CloudNative-Toolkits/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=sangam14/Kubernetes-CloudNative-Toolkits" />
 </a>
-<!--  https://contrib.rocks -->
 
