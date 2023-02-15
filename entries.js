@@ -440,7 +440,7 @@ const entries = [
 		description: "Minimal and free Kubernetes distribution with Terraform ",
 		tag: "Cluster Management",
 		github: "poseidon/typhoon",
-	}
+	},
 
 	
 
@@ -452,6 +452,13 @@ const entries = [
 
 	// W 
 
+	{
+		title: "werf",
+		filename: "",
+		description: "CLI tool for implementing efficient and consistent software delivery to Kubernetes via gluing well-known technologies (Helm, etc.) and facilitating best practices",
+		tag: "Development Tools",
+		github: "werf/werf",
+	}
 
 	// X 
 
