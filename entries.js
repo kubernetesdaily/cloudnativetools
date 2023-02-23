@@ -20,6 +20,14 @@ const entries = [
   //A
 
   {
+	title: "antrea",
+	filename: "",
+	description: "Kubernetes networking based on Open vSwitch",
+	tag: "Networking",
+ 	github: "antrea-io/antrea",
+},
+
+  {
 	title: "aptakub",
 	filename: "",
 	description: "A modern, lightweight and multi-cluster desktop client for Kubernetes. Connect to multiple clusters simultaneously to view, edit and manage all your resources.",
@@ -38,7 +46,42 @@ const entries = [
 },
 
 
+{
+	title: "bumblebee",
+	filename: "",
+	description: "Get eBPF programs running from the cloud to the kernel in 1 line of bash",
+	tag: "Networking",
+ 	github: "solo-io/bumblebee",
+},
+
+
   //c
+
+  {
+	title: "calico",
+	filename: "",
+	description: " Calico is an open source networking and network security solution for containers, virtual machines, and bare-metal workloads .",
+	tag: "Networking",
+ 	github: "projectcalico/calico",
+},
+
+{
+	title: "cilium",
+	filename: "",
+	description: " eBPF-based Networking, Security, and Observability.",
+	tag: "Networking",
+ 	github: "cilium/cilium",
+},
+
+
+{
+	title: "cert-manager",
+	filename: "",
+	description: " Automatically provision and manage TLS certificates in Kubernetes.",
+	tag: "Networking",
+ 	github: "cert-manager/cert-manager",
+},
+
 
 {
 	title: "clusterman",
@@ -72,12 +115,26 @@ const entries = [
 	github: "clusterpedia-io/clusterpedia",
 },
 
+{
+	title: "coredns",
+	filename: "",
+	description: "CoreDNS is a DNS server that chains plugins",
+	tag: "Networking",
+ 	github: "coredns/coredns",
+},
 
   //d
 
 
   // e
 
+  {
+	title: "egress-operator",
+	filename: "",
+	description: "A Kubernetes operator to produce egress gateway Envoy pods and control access to them with network policies",
+	tag: "Networking",
+ 	github: "monzo/egress-operator",
+},
 
 {
 	title: "eksctl",
@@ -133,6 +190,14 @@ const entries = [
 
   // i 
 
+  {
+	title: "ingress-nginx",
+	filename: "",
+	description: "ingress-nginx is an Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer.",
+	tag: "Networking",
+ 	github: "kubernetes/ingress-nginx",
+  },  
+
   // j
 
   {
@@ -161,6 +226,17 @@ const entries = [
 	github: "kubernetes-sigs/kind",
 },
 
+
+
+
+{
+	title: "ksniff",
+	filename: "",
+	description: "Kubectl plugin to ease sniffing on kubernetes pods using tcpdump and wireshark",
+	tag: "Networking",
+ 	github: "eldadru/ksniff",
+},
+
 {
 	title: "kruise",
 	filename: "",
@@ -177,6 +253,13 @@ const entries = [
 	github: "ko-build/ko",
 },
 
+{
+	title: "kubernetes-ingress-controller",
+	filename: "",
+	description: "Configure plugins, health checking, load balancing and more in Kong for Kubernetes Services.",
+	tag: "Networking",
+ 	github: "Kong/kubernetes-ingress-controller",
+},
 
 {
 	title: "konfig",
@@ -204,11 +287,26 @@ const entries = [
 },
 
 {
+	title: "kube-ovn",
+	filename: "",
+	description: " A Kubernetes Network Fabric for Enterprises that is Rich in Functions and Easy in Operations.",
+	tag: "Networking",
+ 	github: "kubeovn/kube-ovn",
+},
+
+{
 	title: "kubenav",
 	filename: "",
 	description: "kubenav is the navigator for your Kubernetes clusters right in your pocket",
 	tag: "Cluster Management",
 	github: "kubenav/kubenav",
+},
+{
+	title: "kubefwd",
+	filename: "",
+	description: "Bulk port forwarding Kubernetes services for local development.",
+	tag: "Networking",
+ 	github: "txn2/kubefwd",
 },
 
 
@@ -398,6 +496,15 @@ const entries = [
 		tag: "Cluster Management",
 		github: "labring/sealos",
 	},
+
+	{
+		title: "submariner",
+		filename: "",
+		description: "Connect all your Kubernetes clusters, no matter where they are in the world.",
+		tag: "Networking",
+		 github: "submariner-io/submariner",
+	},
+	
 
 
 
