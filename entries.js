@@ -20,6 +20,32 @@ const entries = [
   //A
 
   {
+	title: "liquibase",
+	filename: "",
+	description: "Liquibase helps release software faster by bringing DevOps to the database.",
+	tag: "Continuous Integration & Delivery",
+ 	github: "liquibase/liquibase",
+},
+
+  {
+	title: "argocd",
+	filename: "",
+	description: "Declarative continuous deployment for Kubernetes",
+	tag: "Continuous Integration & Delivery",
+ 	github: "argoproj/argo-cd",
+},
+
+
+{
+	title: "agola",
+	filename: "",
+	description: "Agola: CI/CD Redefined ",
+	tag: "Continuous Integration & Delivery",
+ 	github: "agola-io/agola",
+},
+
+
+  {
 	title: "antrea",
 	filename: "",
 	description: "Kubernetes networking based on Open vSwitch",
@@ -35,6 +61,15 @@ const entries = [
  	github: "aptakube/aptakube",
 },
 
+{
+	title: "apollo",
+	filename: "",
+	description: "The logz.io continuous deployment solution over kubernetes",
+	tag: "Continuous Integration & Delivery",
+ 	github: "logzio/apollo",
+},
+
+
   //b 
 
 {
@@ -45,6 +80,13 @@ const entries = [
 	github: "wise2c-devops/breeze",
 },
 
+{
+	title: "brigade",
+	filename: "",
+	description: "Event-driven scripting for Kubernetes",
+	tag: "Continuous Integration & Delivery",
+ 	github: "brigadecore/brigade",
+},
 
 {
 	title: "bumblebee",
@@ -54,6 +96,13 @@ const entries = [
  	github: "solo-io/bumblebee",
 },
 
+{
+	title: "bytebase",
+	filename: "",
+	description: "Reliable Database CI/CD for Developers and DBAs",
+	tag: "Continuous Integration & Delivery",
+ 	github: "bytebase/bytebase",
+},
 
   //c
 
@@ -123,7 +172,31 @@ const entries = [
  	github: "coredns/coredns",
 },
 
+{
+	title: "concourse",
+	filename: "",
+	description: "Concourse is a container-based continuous thing-doer written in Go",
+	tag: "Continuous Integration & Delivery",
+ 	github: "concourse/concourse",
+},
+
   //d
+
+  {
+	title: "drone",
+	filename: "",
+	description: "Drone is a Container-Native, Continuous Delivery Platform",
+	tag: "Continuous Integration & Delivery",
+ 	github: "harness/drone",
+},
+
+  {
+	title: "devtron",
+	filename: "",
+	description: "Software Delivery Workflow for Kubernetes",
+	tag: "Continuous Integration & Delivery",
+ 	github: "devtron-labs/devtron",
+},
 
 
   // e
@@ -146,6 +219,15 @@ const entries = [
 
 
   // f
+
+
+{
+	title: "flagger",
+	filename: "",
+	description: "Progressive delivery Kubernetes operator (Canary, A/B Testing and Blue/Green deployments",
+	tag: "Continuous Integration & Delivery",
+ 	github: "weaveworks/flagger",
+},
 
   // g
 
@@ -207,6 +289,21 @@ const entries = [
 	tag: "Development Tools",
 	github: "eclipse/jkube",
 },
+{
+	title: "jenkins",
+	filename: "",
+	description: "Jenkins automation server",
+	tag: "Continuous Integration & Delivery",
+ 	github: "jenkinsci/jenkins",
+},
+{
+	title: "jenkins-x",
+	filename: "",
+	description: "Jenkins X provides automated CI+CD for Kubernetes with Preview Environments on Pull Requests using Tekton, Knative, Lighthouse, Skaffold and Helm",
+	tag: "Continuous Integration & Delivery",
+ 	github: "jenkins-x/jx",
+},
+
 
   // k
 
@@ -218,6 +315,14 @@ const entries = [
 	github: "kedacore/keda",
 },
 
+{
+	title: "keptn",
+	filename: "",
+	description: "Cloud-native application life-cycle orchestration. Keptn automates your SLO-driven multi-stage delivery and operations & remediation of your applications.",
+	tag: "Continuous Integration & Delivery",
+ 	github: "keptn/keptn",
+},
+
   {
 	title: "kind",
 	filename: "",
@@ -226,7 +331,13 @@ const entries = [
 	github: "kubernetes-sigs/kind",
 },
 
-
+{
+	title: "keploy",
+	filename: "",
+	description: "Testing for Developers. Toolkit that creates test-cases and data mocks from API calls, DB queries, etc.",
+	tag: "Continuous Integration & Delivery",
+ 	github: "keploy/keploy",
+},
 
 
 {
@@ -506,9 +617,31 @@ const entries = [
 	},
 	
 
-
+	{
+		title: "skippbox",
+		filename: "",
+		description: "A Desktop application for k8sd",
+		tag: "Development Tools",
+		github: "skippbox/skippbox",
+	},
+	{
+		title: "spinnaker",
+		filename: "",
+		description: "Spinnaker is an open source, multi-clouwith high velocity and confidence",
+		tag: "Continuous Integration & Delivery",
+		 github: "spinnaker/spinnaker",
+	},
 
 	// T 
+
+	{
+		title: "tekton",
+		filename: "",
+		description: "A cloud native continuous integration and delivery (CI/CD) solution",
+		tag: "Continuous Integration & Delivery",
+		 github: "tektoncd/pipeline",
+	},
+	
 
 	{
 		title: "tanka",
@@ -562,10 +695,10 @@ const entries = [
 	{
 		title: "werf",
 		filename: "",
-		description: "CLI tool for implementing efficient and consistent software delivery to Kubernetes via gluing well-known technologies (Helm, etc.) and facilitating best practices",
-		tag: "Development Tools",
-		github: "werf/werf",
-	}
+		description: "GitOps tool to deliver apps to Kubernetes and integrate this process with GitLab and other CI tools",
+		tag: "Continuous Integration & Delivery",
+		 github: "werf/werf",
+	},
 
 	// X 
 
