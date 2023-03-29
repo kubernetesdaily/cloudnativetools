@@ -109,9 +109,11 @@
                             Ultimate Kubenetes & CloudNative Toolkits <br>
                             <b>Submit Your Favourite Open Source Tool </b>
                         </p>
-                        <a class="btn btn-primary btn-lg" href="https://github.com/sangam14/Kubernetes-CloudNative-Toolkits/blob/main/entries.js " role="button">Submit an Entry</a>
-                        <a class="btn btn-primary btn-lg" href="https://github.com/sangam14/Kubernetes-CloudNative-Toolkits" role="button">Github</a>
-                        <a class="btn btn-primary btn-lg" href="https://discord.gg/rEvr7vq" role="button"> Join Community </a>
+                        <div class="col col-md-6 mx-auto container-fluid ">
+                            <a class="btn btn-primary btn-lg my-2 w-75" href="https://github.com/sangam14/Kubernetes-CloudNative-Toolkits/blob/main/entries.js " role="button">Submit an Entry</a>
+                            <a class="btn btn-primary btn-lg my-2 w-75" href="https://github.com/sangam14/Kubernetes-CloudNative-Toolkits" role="button">Github</a>
+                            <a class="btn btn-primary btn-lg my-2 w-75" href="https://discord.gg/rEvr7vq" role="button"> Join Community </a>
+                        </div>
                         
                     </div>
                     <div class="input-group flex-nowrap">
@@ -120,7 +122,9 @@
                             <span class="input-group-text" id="addon-wrapping">🔍</span>
                         </div>
                     </div>
-                    <div id="list"></div>
+                    <div class="col col-lg-6 col-sm-12 mx-auto">
+                        <div id="list" class="w-100 d-flex flex-column"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -172,7 +176,7 @@
                     card.appendChild(body);
 
                     // title
-                    const cardTitle = document.createElement("h5");
+                    const cardTitle = document.createElement("h3");
                     const cardTitleNode = document.createTextNode(title);
                     cardTitle.className = "card-title";
                     cardTitle.appendChild(cardTitleNode);
@@ -184,7 +188,7 @@
                     if (author) {
                         const authorSubtitle = document.createElement("h6");
                         const authorSubtitleNode = document.createTextNode(author);
-                        authorSubtitle.className = "card-subtitle mb-2 text-muted";
+                        authorSubtitle.className = "card-subtitle my-2 text-muted";
                         authorSubtitle.appendChild(authorSubtitleNode);
 
                         // add a sponsor tag
@@ -234,10 +238,10 @@
                     const group1 = document.createElement("div");
                     const group2 = document.createElement("div");
                     const group3 = document.createElement("div");
-                    toolbar.className = "btn-toolbar";
-                    group1.className = "btn-group mr-2";
-                    group2.className = "btn-group mr-2";
-                    group3.className = "btn-group mr-2";
+                    toolbar.className = "btn-toolbar d-flex flex-column align-items-center w-100";
+                    group1.className = "btn-group my-2 w-75";
+                    group2.className = "btn-group my-2 w-75";
+                    group3.className = "btn-group my-2 w-75";
                     toolbar.appendChild(group1);
                     toolbar.appendChild(group2);
                     toolbar.appendChild(group3);
