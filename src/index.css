@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: -apple-system,
+        BlinkMacSystemFont,
+        "segoe ui",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "open sans",
+        "helvetica neue",
+        sans-serif;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}

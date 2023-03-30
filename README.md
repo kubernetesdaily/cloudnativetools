@@ -1,29 +1,10 @@
+# Kubedaily-kubetools
 
+## How to install locally
 
-## Kubernetes CloudNative Toolkits
-
-
-### [View Submissions](https://github.com/sangam14/Kubernetes-CloudNative-Toolkits/blob/main/entries.js)
-
-## Rules
-
- 
-## How to Submit
- 1. Fork the repository.
- 2. Add your html file to the `/entries` directory.
- 3. Edit the `entries.js` file in the root, with your information for the entry.
- 4. Commit to your forked repo.
- 5. Make a pull request to master from your forked repo.
-
- 
-## Contributors
-
-
-We ❤️ contributions big or small.
-
-### Thanks to all our contributors!
-
-<a href="https://github.com/sangam14/Kubernetes-CloudNative-Toolkits/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=sangam14/Kubernetes-CloudNative-Toolkits" />
-</a>
-
+1. Clone the repository to a directory.
+2. cd into the directory
+3. Make sure you have latest nodejs and vite installed
+4. run `npm install`
+5. run `npm run dev` to start development server
+6. run `npm run build` to build the project
