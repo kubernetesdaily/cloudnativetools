@@ -17,8 +17,8 @@ function Hero() {
               Submit Your Favourite Open Source Tool
             </h3>
             <div className="flex flex-col md:flex-row justify-center gap-5 mt-4">
-              <Button text={"Submit an Entry"} link={"https://github.com/Jelsingeprajwal/Kubedaily-kubetools/blob/main/src/data/entries.js"} />
-              <Button text={"Github"} link={"https://github.com/Jelsingeprajwal/Kubedaily-kubetools"} />
+              <Button text={"Submit an Entry"} link={"https://github.com/sangam14/Kubernetes-CloudNative-Toolkits/blob/main/src/data/entries.js"} />
+              <Button text={"Github"} link={"https://github.com/sangam14/Kubernetes-CloudNative-Toolkits"} />
               <Button
                 text={"Join Us on Discord"}
                 link={"https://discord.com/invite/rEvr7vq"}
