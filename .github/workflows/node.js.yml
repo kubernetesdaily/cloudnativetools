@@ -1,18 +1,49 @@
-name: Build and Deploy
-on: [push]
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
+name: Node.js CI
+# Add & Commit homepage: https://github.com/marketplace/actions/add-commit
+# NPM publish homepage: https://github.com/marketplace/actions/npm-publish
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: |
-          npm install
-          npm run build
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions: write-all
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: dist # The folder the action should deploy.
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        uses: actions/setup-node@v3
+      - run: npm install
+      - name: Build
+        uses: actions/setup-node@v3
+      - run: npm run build --if-present
+      # add built files to the commit as local github user (not the github action bot)
+      - name: Add & Commit
+        uses: EndBug/add-and-commit@v9.1.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          default_author: github_actions
+          message: "Build files"
+          # add dist folder and the @types folder
+          add: "dist"
+          commit: --signoff
+          push: true
+      - name: NPM Publish
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
