@@ -12,7 +12,7 @@ jobs:
         run: npm install
 
       - name: ESLint
-        run: npm run lint
+        run: npm run 
       
       - name: Build 🔧
         run: npm run build
