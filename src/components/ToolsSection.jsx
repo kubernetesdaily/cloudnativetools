@@ -23,7 +23,7 @@ function ToolsSection() {
                     .filter((entry) => {
                         return search.toLocaleLowerCase() === ""
                             ? entry
-                            : entry.title.toLocaleLowerCase().includes(search);
+                            : entry.title.toLocaleLowerCase().includes(search.toLocaleLowerCase());
                     })
                     .map((entry, index) => (
                         <ToolCard entry={entry} key={index} />

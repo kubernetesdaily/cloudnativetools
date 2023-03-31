@@ -596,7 +596,7 @@ const entries = [
 
   {
     title: "okteto",
-    link: "",
+    link: "https://kubedaily.com/okteto-develop-your-applications-directly-in-your-kubernetes-cluster/",
     description:
       "okteto accelerates the development workflow of Kubernetes applications.",
     tag: "Development Tools",
