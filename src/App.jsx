@@ -9,6 +9,7 @@ function App() {
       <Hero />
       <hr className="text-white" />
       <ToolsSection />
+      <hr className="text-white" />
       <Footer />
     </div>
   );
