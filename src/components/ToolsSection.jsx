@@ -39,8 +39,15 @@ function ToolsSection() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-4 mt-[40px]">
                 {entries
+
                     .filter((entry) => { 
                         return search.toLocaleLowerCase() === "" ? selectVal.toLocaleLowerCase() === "" ? entry: entry.tag.toLocaleLowerCase().includes(selectVal.toLocaleLowerCase()) : entry.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+
+                    .filter((entry) => {
+                        return search.toLocaleLowerCase() === ""
+                            ? entry
+                            : entry.title.toLocaleLowerCase().includes(search.toLocaleLowerCase());
+
                     })
                     .map((entry, index) => (
                         <ToolCard entry={entry} key={index} />

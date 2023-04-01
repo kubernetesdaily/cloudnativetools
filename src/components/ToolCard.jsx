@@ -16,7 +16,7 @@ function ToolCard({ entry }) {
             target={"_blank"}
             href={entry.link !== "" ? entry.link : "/"}
           >
-            Source
+            learn
           </a>
         </div>
         <div className=" py-2 px-4 rounded-3xl h-[36px] flex items-center bg-bgGray font-semibold cursor-pointer">
