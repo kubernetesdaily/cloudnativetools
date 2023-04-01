@@ -6,7 +6,7 @@ function Footer() {
         <div className="flex justify-between">
             <div>
 
-                Designed by <a href="https://github.com/Jelsingeprajwal" target={"_blank"} className="font-semibold">Jelsinge Prajwal</a>
+                Designed by <a href="https://github.com/Jelsingeprajwal" target={"_blank"} className="font-semibold">Jelsinge Prajwal </a> <a href="https://twitter.com/CNCFolks"  Powered by target={"_blank"} className="font-semibold"> @CloudNativeFolks >  </a>
             </div>
             <div>
                 {/* <!-- Place this tag where you want the button to render. --> */}
