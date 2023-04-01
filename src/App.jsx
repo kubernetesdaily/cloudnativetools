@@ -1,5 +1,4 @@
 import "./App.css";
-import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import ToolsSection from "./components/ToolsSection";
 
@@ -9,7 +8,6 @@ function App() {
       <Hero />
       <hr className="text-white" />
       <ToolsSection />
-      <Footer/>
     </div>
   );
 }
