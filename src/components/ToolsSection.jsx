@@ -29,8 +29,9 @@ function ToolsSection() {
                     <select
                         value={selectVal}
                         onChange={(ev) => setSelectVal(ev.target.value)}
-                        className="w-full md:w-[300px] rounded-xl bg-white text-black p-[15px] h-[48px]"
+                        className="w-full md:w-[300px] rounded-xl bg-white text-black p-[10px] h-[48px]"
                     >
+                        <option value="" className="w-full md:w-[300px] text-[12px]">Select a tag</option>
                         {dropdownTags.map((tag) => (
                             <option value={tag} className="w-full md:w-[300px] text-[12px] ">{tag}</option>
                         ))}
