@@ -707,7 +707,7 @@ const entries = [
 
   {
     title: "werf",
-    link: "",
+    link: "https://kubedaily.com/werf-a-solution-for-implementing-efficient-and-consistent-software-delivery-to-kubernetes-facilitating-best-practices/",
     description:
       "GitOps tool to deliver apps to Kubernetes and integrate this process with GitLab and other CI tools",
     tag: "Continuous Integration & Delivery",
