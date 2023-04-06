@@ -1,4 +1,4 @@
-# Kubedaily-kubetools
+# Kubedaily-tools
 
 ## How to install locally
 
