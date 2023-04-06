@@ -12,7 +12,7 @@ function Footer() {
             <div>
                 {/* <!-- Place this tag where you want the button to render. --> */}
                 <GitHubButton href="https://github.com/sangam14/Kubernetes-CloudNative-Toolkits" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star sangam14/Kubernetes-CloudNative-Toolkits on GitHub">Star</GitHubButton>
-            <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fkubedaily.com%2FKubernetes-CloudNative-Toolkits%2F"><img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fkubedaily.com%2FKubernetes-CloudNative-Toolkits%2F&label=Tools&labelColor=%232ccce4&countColor=%23dce775" /></a>
+                <a href="https://visitorbadge.io/status?path=https%3A%2F%2Fkubedaily.com%2Ftools%2F"><img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fkubedaily.com%2Ftools%2F&label=Tools&labelColor=%2337d67a&countColor=%23ff8a65" /></a>
     </div>
         </div>
 
