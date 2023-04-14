@@ -123,7 +123,7 @@ const entries = [
 
   {
     title: "cert-manager",
-    link: "",
+    link: "https://kubedaily.com/certmanager-automatically-provision-and-manage-tls-certificates-in-kubernetes/",
     description:
       " Automatically provision and manage TLS certificates in Kubernetes.",
     tag: "Networking",
