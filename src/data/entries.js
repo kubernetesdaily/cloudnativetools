@@ -17,15 +17,6 @@ const entries = [
   //A
 
   {
-    title: "liquibase",
-    link: "",
-    description:
-      "Liquibase helps release software faster by bringing DevOps to the database.",
-    tag: "Continuous Integration & Delivery",
-    github: "liquibase/liquibase",
-  },
-
-  {
     title: "argocd",
     link: "",
     description: "Declarative continuous deployment for Kubernetes",
@@ -67,7 +58,14 @@ const entries = [
   },
 
   //b
-
+  {
+    title: "bfe",
+    link: "",
+    description:
+    "Open-source layer 7 load balancer derived from proprietary Baidu FrontEnd Platform (BFE).",
+    tag: "Service Proxy & Mesh",
+    github: "bfenetworks/bfe",
+  },
   {
     title: "breeze",
     link: "",
@@ -112,7 +110,23 @@ const entries = [
     tag: "Networking",
     github: "projectcalico/calico",
   },
-
+  {
+    title: "caddy",
+    link: "",
+    description:
+      "Caddy is a powerful, enterprise-ready, open source web server with automatic HTTPS written in Go.",
+    tag: "Service Proxy & Mesh",
+    github: "caddyserver/caddy",
+  },
+  
+  {
+    title: "contour",
+    link: "",
+    description:
+      "Contour is a Kubernetes ingress controller using Envoy proxy.",
+    tag: "Service Proxy & Mesh",
+    github: "projectcontour/contour",
+  },
   {
     title: "cilium",
     link: "",
@@ -208,6 +222,14 @@ const entries = [
     tag: "Networking",
     github: "monzo/egress-operator",
   },
+   {
+    title: "envoy",
+    link: "",
+    description:
+      "Cloud-native high-performance edge/middle/service proxy",
+    tag: "Service Proxy & Mesh",
+    github: "envoyproxy/envoy",
+  },
 
   {
     title: "eksctl",
@@ -251,6 +273,14 @@ const entries = [
   // h
 
   {
+    title: "haproxy",
+    link: "",
+    description:
+      "HAProxy Load Balancer's development branch (mirror of git.haproxy.org)",
+    tag: "Service Proxy & Mesh",
+    github: "haproxy/haproxy",
+  },
+  {
     title: "harvester",
     link: "",
     description: "Open source hyperconverged infrastructure (HCI) software",
@@ -268,7 +298,14 @@ const entries = [
   },
 
   // i
-
+  {
+    title: "inlets",
+    link: "",
+    description:
+      "Secure HTTP and TCP tunnels that just work",
+    tag: "Service Proxy & Mesh",
+    github: "inlets/inlets-pro",
+  },
   {
     title: "ingress-nginx",
     link: "",
@@ -544,6 +581,15 @@ const entries = [
     github: "liqotech/liqo",
   },
 
+  {
+    title: "liquibase",
+    link: "",
+    description:
+      "Liquibase helps release software faster by bringing DevOps to the database.",
+    tag: "Continuous Integration & Delivery",
+    github: "liquibase/liquibase",
+  },
+
   // M
 
   {
@@ -564,6 +610,15 @@ const entries = [
     github: "kubeshop/monokle",
   },
   {
+    title: "metallb",
+    link: "",
+    description:
+      "A network load-balancer implementation for Kubernetes using standard routing protocols",
+    tag: "Service Proxy & Mesh",
+    github: "metallb/metallb",
+  },
+
+  {
     title: "metalk8s",
     link: "",
     description:
@@ -571,6 +626,7 @@ const entries = [
     tag: "Cluster Management",
     github: "scality/metalk8s",
   },
+  
 
   {
     title: "microk8s",
@@ -592,8 +648,33 @@ const entries = [
 
   //N
 
+  {
+    title: "nginx",
+    link: "",
+    description:
+      "NGINX Reverse Proxy",
+    tag: "Service Proxy & Mesh",
+    github: "nginx/nginx",
+  },
+
   // O
 
+  {
+    title: "openelb",
+    link: "",
+    description:
+      "Load Balancer Implementation for Kubernetes in Bare-Metal, Edge, and Virtualization",
+    tag: "Service Proxy & Mesh",
+    github: "openelb/openelb",
+  },
+  {
+    title: "openresty",
+    link: "",
+    description:
+      "High Performance Web Platform Based on Nginx and LuaJIT",
+    tag: "Service Proxy & Mesh",
+    github: "openresty/openresty",
+  },
   {
     title: "okteto",
     link: "https://kubedaily.com/okteto-develop-your-applications-directly-in-your-kubernetes-cluster/",
@@ -604,12 +685,38 @@ const entries = [
   },
 
   // P
+  {
+    title: "pipy",
+    link: "",
+    description:
+      "Pipy is a programmable proxy for the cloud, edge and IoT. It's written in C++, which makes it extremely lightweight and fast. It's also fully programmable by using PipyJS, a tailored version from the standard JavaScript language.",
+    tag: "Service Proxy & Mesh",
+    github: "flomesh-io/pipy",
+  },
 
   // Q
 
   // R
 
   // S
+
+  {
+    title: "Sentinel",
+    link: "",
+    description:
+      "A powerful flow control component enabling reliability, resilience and monitoring for microservices.",
+    tag: "Service Proxy & Mesh",
+    github: "alibaba/Sentinel",
+  },
+
+  {
+    title: "skipper",
+    link: "",
+    description:
+      "An HTTP router and reverse proxy for service composition, including use cases like Kubernetes Ingress",
+    tag: "Service Proxy & Mesh",
+    github: "zalando/skipper",
+  },
 
   {
     title: "silver-surfer",
@@ -719,6 +826,15 @@ const entries = [
   // Y
 
   // Z
+
+  {
+    title: "Zuul",
+    link: "",
+    description:
+      "Zuul is a gateway service that provides dynamic routing, monitoring, resiliency, security, and more.",
+    tag: "Service Proxy & Mesh",
+    github: "Netflix/zuul",
+  },
 ];
 
 export default entries;
