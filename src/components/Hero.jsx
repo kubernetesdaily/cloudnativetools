@@ -1,5 +1,5 @@
 import React from "react";
-import kubetools from "../assets/tools.svg";
+import kubetools from "../assets/Tools.png";
 import Button from "./Button";
 function Hero() {
   return (
