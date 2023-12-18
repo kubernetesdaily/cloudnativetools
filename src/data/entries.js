@@ -18,7 +18,7 @@ const entries = [
     "title": "argocd",
     "link": NaN,
     "description": "Declarative continuous deployment for Kubernetes",
-    "tag": "Continuous Integration & Delivery\n",
+    "tag": "Continuous Integration & Delivery",
     "github": "argoproj/argo-cd"
   },
   {
