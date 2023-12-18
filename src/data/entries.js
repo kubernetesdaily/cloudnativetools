@@ -18,8 +18,8 @@ const entries = [
     "title": "argocd",
     "link": NaN,
     "description": "Declarative continuous deployment for Kubernetes",
-    "tag": "Continuous Integration & Delivery",
-    "github": "argoproj/argo-cd\n"
+    "tag": "Continuous Integration & Delivery\n",
+    "github": "argoproj/argo-cd"
   },
   {
     "title": "agola",
@@ -111,6 +111,13 @@ const entries = [
     "description": "eBPF-based Networking, Security, and Observability",
     "tag": "Networking",
     "github": "cilium/cilium"
+  },
+  {
+    "title": "cnspec",
+    "link": NaN,
+    "description": "An open source, cloud-native security to protect everything from build to runtime",
+    "tag": "Security",
+    "github": "mondoohq/cnspec"
   },
   {
     "title": "cert-manager",
@@ -274,6 +281,13 @@ const entries = [
     "github": "jenkins-x/jx"
   },
   {
+    "title": "kdigger",
+    "link": NaN,
+    "description": "Kubernetes focused container assessment and context discovery tool for penetration testing",
+    "tag": "Security",
+    "github": "quarkslab/kdigger"
+  },
+  {
     "title": "keda",
     "link": NaN,
     "description": "Event-driven Autoscaling in Kubernetes",
@@ -351,6 +365,13 @@ const entries = [
     "github": "bluek8s/kubedirector"
   },
   {
+    "title": "kube-bench",
+    "link": NaN,
+    "description": "Checks whether Kubernetes is deployed according to security best practices as defined in the CIS Kubernetes Benchmark",
+    "tag": "Security",
+    "github": "aquasecurity/kube-bench"
+  },
+  {
     "title": "kube-ovn",
     "link": NaN,
     "description": "A Kubernetes Network Fabric for Enterprises that is Rich in Functions and Easy in Operations",
@@ -393,11 +414,32 @@ const entries = [
     "github": "kubesphere/kubesphere"
   },
   {
+    "title": "kube-hunter",
+    "link": NaN,
+    "description": "Hunt for security weaknesses in Kubernetes clusters",
+    "tag": "Security",
+    "github": "aquasecurity/kube-hunter"
+  },
+  {
     "title": "kubespray",
     "link": NaN,
     "description": "Deploy a Production Ready Kubernetes Cluster",
     "tag": "Cluster Management",
     "github": "kubernetes-sigs/kubespray"
+  },
+  {
+    "title": "kubeletctl",
+    "link": NaN,
+    "description": "A client for kubelet",
+    "tag": "Security",
+    "github": "cyberark/kubeletctl"
+  },
+  {
+    "title": "KubeArmor",
+    "link": NaN,
+    "description": "Cloud-native Runtime Security Enforcement System. Workload hardening and implementing least-permissive policies made easy",
+    "tag": "Security",
+    "github": "kubearmor/KubeArmor"
   },
   {
     "title": "kubicorn",
@@ -533,11 +575,25 @@ const entries = [
     "github": "okteto/okteto"
   },
   {
+    "title": "peirates",
+    "link": NaN,
+    "description": "Peirates - Kubernetes Penetration Testing tool",
+    "tag": "Security",
+    "github": "inguardians/peirates"
+  },
+  {
     "title": "pipy",
     "link": NaN,
     "description": "Pipy is a programmable proxy for the cloud, edge and IoT. It's written in C++, which makes it extremely lightweight and fast. It's also fully programmable by using PipyJS, a tailored version from the standard JavaScript language.",
     "tag": "Service Proxy & Mesh",
     "github": "flomesh-io/pip"
+  },
+  {
+    "title": "porter",
+    "link": NaN,
+    "description": "Porter enables you to package your application artifact, client tools, configuration and deployment logic together as an installer that you can distribute, and install with a single command.",
+    "tag": "Development Tools",
+    "github": "getporter/porter"
   },
   {
     "title": "Sentinel",
@@ -638,6 +694,5 @@ const entries = [
     "github": "Netflix/zuul"
   }
 ];
-
 
 export default entries;
