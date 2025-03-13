@@ -1,19 +1,26 @@
-import { splitAtTopLevelOnly } from './splitAtTopLevelOnly'
+import parser from 'postcss-selector-parser'
+import { movePseudos } from './pseudoElements'
 
 export function applyImportantSelector(selector, important) {
-  let matches = /^(.*?)(:before|:after|::[\w-]+)(\)*)$/g.exec(selector)
-  if (!matches) return `${important} ${wrapWithIs(selector)}`
+  let sel = parser().astSync(selector)
 
-  let [, before, pseudo, brackets] = matches
-  return `${important} ${wrapWithIs(before + brackets)}${pseudo}`
-}
+  sel.each((sel) => {
+    // For nesting, we only need to wrap a selector with :is() if it has a top-level combinator,
+    // e.g. `.dark .text-white`, to be independent of DOM order. Any other selector, including
+    // combinators inside of pseudos like `:where()`, are ok to nest.
+    let shouldWrap = sel.nodes.some((node) => node.type === 'combinator')
 
-function wrapWithIs(selector) {
-  let parts = splitAtTopLevelOnly(selector, ' ')
+    if (shouldWrap) {
+      sel.nodes = [
+        parser.pseudo({
+          value: ':is',
+          nodes: [sel.clone()],
+        }),
+      ]
+    }
 
-  if (parts.length === 1 && parts[0].startsWith(':is(') && parts[0].endsWith(')')) {
-    return selector
-  }
+    movePseudos(sel)
+  })
 
-  return `:is(${selector})`
+  return `${important} ${sel.toString()}`
 }

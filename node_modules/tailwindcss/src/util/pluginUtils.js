@@ -88,6 +88,22 @@ function isArbitraryValue(input) {
 function splitUtilityModifier(modifier) {
   let slashIdx = modifier.lastIndexOf('/')
 
+  // If the `/` is inside an arbitrary, we want to find the previous one if any
+  // This logic probably isn't perfect but it should work for most cases
+  let arbitraryStartIdx = modifier.lastIndexOf('[', slashIdx)
+  let arbitraryEndIdx = modifier.indexOf(']', slashIdx)
+
+  let isNextToArbitrary = modifier[slashIdx - 1] === ']' || modifier[slashIdx + 1] === '['
+
+  // Backtrack to the previous `/` if the one we found was inside an arbitrary
+  if (!isNextToArbitrary) {
+    if (arbitraryStartIdx !== -1 && arbitraryEndIdx !== -1) {
+      if (arbitraryStartIdx < slashIdx && slashIdx < arbitraryEndIdx) {
+        slashIdx = modifier.lastIndexOf('/', arbitraryStartIdx)
+      }
+    }
+  }
+
   if (slashIdx === -1 || slashIdx === modifier.length - 1) {
     return [modifier, undefined]
   }
@@ -108,18 +124,14 @@ export function parseColorFormat(value) {
   if (typeof value === 'string' && value.includes('<alpha-value>')) {
     let oldValue = value
 
-    return ({ opacityValue = 1 }) => oldValue.replace('<alpha-value>', opacityValue)
+    return ({ opacityValue = 1 }) => oldValue.replace(/<alpha-value>/g, opacityValue)
   }
 
   return value
 }
 
 function unwrapArbitraryModifier(modifier) {
-  modifier = modifier.slice(1, -1)
-  if (modifier.startsWith('--')) {
-    modifier = `var(${modifier})`
-  }
-  return modifier
+  return normalize(modifier.slice(1, -1))
 }
 
 export function asColor(modifier, options = {}, { tailwindConfig = {} } = {}) {

@@ -1,7 +1,7 @@
 // @ts-check
 
 import fs from 'fs'
-import LRU from 'quick-lru'
+import LRU from '@alloc/quick-lru'
 
 import hash from '../util/hashConfig'
 import resolveConfig from '../public/resolve-config'
@@ -63,9 +63,7 @@ function getTailwindConfig(configOrPath) {
   }
 
   // It's a plain object, not a path
-  let newConfig = resolveConfig(
-    configOrPath.config === undefined ? configOrPath : configOrPath.config
-  )
+  let newConfig = resolveConfig(configOrPath?.config ?? configOrPath ?? {})
 
   newConfig = validateConfig(newConfig)
 

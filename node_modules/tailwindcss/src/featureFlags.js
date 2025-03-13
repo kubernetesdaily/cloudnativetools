@@ -1,16 +1,11 @@
 import colors from 'picocolors'
 import log from './util/log'
-import { env } from './lib/sharedState'
 
 let defaults = {
   optimizeUniversalDefaults: false,
   generalizedModifiers: true,
-  get disableColorOpacityUtilitiesByDefault() {
-    return env.OXIDE
-  },
-  get relativeContentPathsByDefault() {
-    return env.OXIDE
-  },
+  disableColorOpacityUtilitiesByDefault: false,
+  relativeContentPathsByDefault: false,
 }
 
 let featureFlags = {
@@ -20,11 +15,7 @@ let featureFlags = {
     'disableColorOpacityUtilitiesByDefault',
     'relativeContentPathsByDefault',
   ],
-  experimental: [
-    'optimizeUniversalDefaults',
-    'generalizedModifiers',
-    // 'variantGrouping',
-  ],
+  experimental: ['optimizeUniversalDefaults', 'generalizedModifiers'],
 }
 
 export function flagEnabled(config, flag) {
