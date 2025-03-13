@@ -1,4 +1,4 @@
-name: Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -9,16 +9,34 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Set up Node
         uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      - name: Cache node_modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
+      - name: Clean Cache and Node Modules
+        run: |
+          rm -rf node_modules
+          npm cache clean --force
 
       - name: Install dependencies
-        uses: bahmutov/npm-install@v1
+        run: npm ci
+
+      - name: Update dependencies
+        run: npm update
 
       - name: Build project
         run: npm run build
@@ -30,25 +48,34 @@ jobs:
           path: ./dist
 
   deploy:
+    name: Deploy to GitHub Pages
+    needs: build # This job depends on the 'build' job
     runs-on: ubuntu-latest
-
     permissions:
-      contents: write  # Ensure this line is present to grant write access to the `gh-pages` branch
+      contents: write # Needed to deploy to GitHub Pages
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          repository: ${{ github.repository }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: gh-pages
 
-      - name: Install dependencies
-        run: npm install
+      - name: Download production-ready build files
+        uses: actions/download-artifact@v4
+        with:
+          name: production-files
+          path: ./dist
 
-      - name: Build project
-        run: npm run build
+      - name: Move the artifacts to correct location
+        run: |
+          mv dist/* gh-pages
+          rm -r dist
 
       - name: Deploy to GitHub Pages
-        run: |
-          git config --global user.name 'github-actions[bot]'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add .
-          git commit -m 'Deploy to GitHub Pages'
-          git push origin gh-pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: gh-pages
