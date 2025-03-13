@@ -29,14 +29,6 @@ jobs:
           name: production-files
           path: ./dist
 
-  name: Deploy
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
   deploy:
     runs-on: ubuntu-latest
 
@@ -44,19 +36,19 @@ jobs:
       contents: write  # Ensure this line is present to grant write access to the `gh-pages` branch
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build project
-      run: npm run build
+      - name: Build project
+        run: npm run build
 
-    - name: Deploy to GitHub Pages
-      run: |
-        git config --global user.name 'github-actions[bot]'
-        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add .
-        git commit -m 'Deploy to GitHub Pages'
-        git push origin gh-pages
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          git commit -m 'Deploy to GitHub Pages'
+          git push origin gh-pages
