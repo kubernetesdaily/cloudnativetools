@@ -1,39 +1,41 @@
 import React from "react";
 
 function ToolCard({ entry }) {
-  return <div
-    className="w-full border min-w-[315px] border-pink-600 pt-10 px-4 pb-4 rounded-md"
-  >
-    <div>
-      <h3 className="text-[28px] font-semibold">{entry.title}</h3>
-      <p className="text-base text-grayFill">{entry.description}</p>
-    </div>
-    <div className="flex justify-between items-end mt-4">
-      <span className="font-mono">{entry.tag}</span>
-      <div className="flex gap-2 ">
-        <div className=" py-2 px-4 rounded-3xl h-[36px] flex items-center bg-bgGray font-semibold cursor-pointer">
-          <a
-            target={"_blank"}
-            href={entry.link !== "" ? entry.link : "/"}
-          >
-            learn
-          </a>
-        </div>
-        <div className=" py-2 px-4 rounded-3xl h-[36px] flex items-center bg-bgGray font-semibold cursor-pointer">
-          <a
-            target={"_blank"}
-            href={
-              entry.github !== ""
-                ? "https://www.github.com/" + entry.github
-                : "/"
-            }
-          >
-            Github
-          </a>
+  return (
+    <div className="w-full border border-gray-700 bg-bgGray rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300">
+      <div className="flex flex-col h-full">
+        <h3 className="text-xl font-semibold text-primary mb-2">
+          {entry.title}
+        </h3>
+        <p className="text-sm text-grayFill flex-grow">{entry.description}</p>
+        <div className="mt-4 flex items-center justify-between">
+          <span className="text-xs font-mono text-gray-400">{entry.tag}</span>
+          <div className="flex gap-2">
+            <a
+              href={entry.link !== "" ? entry.link : "/"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-full transition-colors duration-200 flex items-center justify-center h-[36px] "
+            >
+              Learn
+            </a>
+            <a
+              href={
+                entry.github !== ""
+                  ? "https://www.github.com/" + entry.github
+                  : "/"
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm bg-gray-600 hover:bg-gray-700 text-white font-semibold py-2 px-3 rounded-full transition-colors duration-200 flex items-center justify-center h-[36px]"
+            >
+              Github
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>;
+  );
 }
 
 export default ToolCard;
