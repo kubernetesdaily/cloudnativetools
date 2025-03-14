@@ -1,17 +1,18 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
-      textColor: {
-        primary: "#dadadb",
-        grayFill: "#9b9c9d",
-      },
-      backgroundColor: {
-        bgPrimary: "#1d1e20",
-        bgGray: "#2e2e33",
-      },
+      colors:{
+        primary: '#f8f8f2',
+        bgGray : '#282a36',
+        bgPrimary : '#191a21',
+        grayFill : '#6b6f8c',
+      }
     },
   },
   plugins: [],
-};
+}
