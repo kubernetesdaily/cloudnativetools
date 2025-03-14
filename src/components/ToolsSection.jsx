@@ -1,13 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import entries from "../data/entries";
 import ToolCard from "./ToolCard";
 
 function ToolsSection() {
   const [search, setSearch] = useState("");
   const [selectVal, setSelectVal] = useState("");
+  const [githubStars, setGithubStars] = useState({}); // State to store star counts
 
   // Extract unique tags from entries
   let dropdownTags = Array.from(new Set(entries.map((entry) => entry.tag)));
+
+  // Function to fetch GitHub stars for a repository
+  const fetchGithubStars = async (repo) => {
+    try {
+      const response = await fetch(`https://api.github.com/repos/${repo}`);
+      if (!response.ok) {
+        throw new Error(`GitHub API error for ${repo}: ${response.status}`);
+      }
+      const data = await response.json();
+      return data.stargazers_count;
+    } catch (error) {
+      console.error("Error fetching GitHub stars:", error);
+      return null;
+    }
+  };
+
+  // Fetch GitHub stars for all repositories on component mount
+  useEffect(() => {
+    const fetchAllStars = async () => {
+      const stars = {};
+      const promises = entries.map(async (entry) => {
+        if (entry.github) {
+          const starCount = await fetchGithubStars(entry.github);
+          stars[entry.github] = starCount;
+        }
+      });
+      await Promise.all(promises);
+      setGithubStars(stars);
+    };
+
+    fetchAllStars();
+  }, []);
 
   return (
     <div className="bg-bgPrimary w-full px-6 py-6 max-w-7xl mx-auto">
@@ -55,11 +88,17 @@ function ToolsSection() {
             const searchTerm = search.toLowerCase();
             const selectedTag = selectVal.toLowerCase();
             const titleMatches = entry.title.toLowerCase().includes(searchTerm);
-            const tagMatches = selectedTag === "" || entry.tag.toLowerCase().includes(selectedTag);
+            const tagMatches =
+              selectedTag === "" ||
+              entry.tag.toLowerCase().includes(selectedTag);
             return titleMatches && tagMatches;
           })
           .map((entry, index) => (
-            <ToolCard entry={entry} key={index} />
+            <ToolCard
+              entry={entry}
+              key={index}
+              githubStars={githubStars[entry.github]} // Pass star count to ToolCard
+            />
           ))}
       </div>
     </div>

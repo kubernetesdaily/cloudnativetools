@@ -1,6 +1,6 @@
 import React from "react";
 
-function ToolCard({ entry }) {
+function ToolCard({ entry, githubStars }) {
   return (
     <div className="w-full border border-gray-700 bg-bgGray rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300">
       <div className="flex flex-col h-full">
@@ -31,6 +31,18 @@ function ToolCard({ entry }) {
             >
               Github
             </a>
+            {/* Display GitHub stars */}
+            {entry.github && githubStars !== null && githubStars !== undefined && (
+              <span className="text-sm bg-green-600 text-white font-semibold py-2 px-3 rounded-full transition-colors duration-200 flex items-center justify-center h-[36px]">
+                ⭐ {githubStars}
+              </span>
+            )}
+             {entry.github && githubStars === null && (
+             <span className="text-sm bg-gray-600 text-white font-semibold py-2 px-3 rounded-full transition-colors duration-200 flex items-center justify-center h-[36px]">
+               No Star
+             </span>
+           )}
+
           </div>
         </div>
       </div>
