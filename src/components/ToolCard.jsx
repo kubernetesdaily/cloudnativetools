@@ -1,6 +1,33 @@
 import React from "react";
 
-function ToolCard({ entry, githubStars }) {
+function ToolCard({ entry, githubStars, isLoading, formatStarCount }) {
+  const renderStarCount = () => {
+    if (!entry.github) return null;
+    
+    if (isLoading) {
+      return (
+        <span className="text-sm bg-gray-600 text-white font-semibold py-2 px-3 rounded-full transition-colors duration-200 flex items-center justify-center h-[36px] animate-pulse">
+          ⭐ ...
+        </span>
+      );
+    }
+
+    if (githubStars === null) {
+      return (
+        <span className="text-sm bg-gray-600 text-white font-semibold py-2 px-3 rounded-full transition-colors duration-200 flex items-center justify-center h-[36px] opacity-75">
+          ⭐ N/A
+        </span>
+      );
+    }
+
+    return (
+      <span className="text-sm bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-3 rounded-full transition-colors duration-200 flex items-center justify-center h-[36px] cursor-default">
+        <span className="mr-1">⭐</span>
+        {formatStarCount(githubStars)}
+      </span>
+    );
+  };
+
   return (
     <div className="w-full border border-gray-700 bg-bgGray rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow duration-300">
       <div className="flex flex-col h-full">
@@ -15,7 +42,7 @@ function ToolCard({ entry, githubStars }) {
               href={entry.link !== "" ? entry.link : "/"}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-full transition-colors duration-200 flex items-center justify-center h-[36px] "
+              className="text-sm bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-full transition-colors duration-200 flex items-center justify-center h-[36px]"
             >
               Learn
             </a>
@@ -31,18 +58,7 @@ function ToolCard({ entry, githubStars }) {
             >
               Github
             </a>
-            {/* Display GitHub stars */}
-            {entry.github && githubStars !== null && githubStars !== undefined && (
-              <span className="text-sm bg-green-600 text-white font-semibold py-2 px-3 rounded-full transition-colors duration-200 flex items-center justify-center h-[36px]">
-                ⭐ {githubStars}
-              </span>
-            )}
-             {entry.github && githubStars === null && (
-             <span className="text-sm bg-gray-600 text-white font-semibold py-2 px-3 rounded-full transition-colors duration-200 flex items-center justify-center h-[36px]">
-               No Star
-             </span>
-           )}
-
+            {renderStarCount()}
           </div>
         </div>
       </div>
