@@ -165,7 +165,7 @@ function ToolsSection() {
   const sortedEntries = sortTools(filteredEntries);
 
   return (
-    <div className="bg-bgPrimary w-full px-6 py-8 max-w-7xl mx-auto">
+    <div id="tools-section" className="bg-bgPrimary w-full px-6 py-8 max-w-7xl mx-auto">
       <div className="flex flex-col w-full justify-center items-center gap-6 mx-auto rounded-xl">
         <div className="w-full flex flex-col items-center">
           <h2 className="text-3xl font-bold text-primary mb-2">
