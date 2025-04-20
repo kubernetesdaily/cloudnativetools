@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import entries from "../data/entries";
+import { entries } from "../data/entries";
 import ToolCard from "./ToolCard";
 
 function ToolsSection() {
