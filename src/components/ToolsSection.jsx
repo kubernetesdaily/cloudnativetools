@@ -5,12 +5,13 @@ import ToolCard from "./ToolCard";
 function ToolsSection() {
   const [search, setSearch] = useState("");
   const [selectVal, setSelectVal] = useState("");
+  const [sortBy, setSortBy] = useState("default");
   const [githubStars, setGithubStars] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
   // Extract unique tags from entries
-  let dropdownTags = Array.from(new Set(entries.map((entry) => entry.tag)));
+  let dropdownTags = Array.from(new Set(entries.map((entry) => entry.tag))).sort();
 
   // Function to format star count
   const formatStarCount = (count) => {
@@ -128,63 +129,131 @@ function ToolsSection() {
     fetchAllStars();
   }, []);
 
+  // Function to sort tools based on selected criteria
+  const sortTools = (filteredEntries) => {
+    switch (sortBy) {
+      case 'stars':
+        return [...filteredEntries].sort((a, b) => {
+          const starsA = githubStars[a.github] || 0;
+          const starsB = githubStars[b.github] || 0;
+          return starsB - starsA;
+        });
+      case 'az':
+        return [...filteredEntries].sort((a, b) => 
+          a.title.localeCompare(b.title)
+        );
+      case 'za':
+        return [...filteredEntries].sort((a, b) => 
+          b.title.localeCompare(a.title)
+        );
+      default:
+        return filteredEntries;
+    }
+  };
+
+  // Filter entries based on search and tag selection
+  const filteredEntries = entries.filter((entry) => {
+    const searchTerm = search.toLowerCase();
+    const selectedTag = selectVal.toLowerCase();
+    const titleMatches = entry.title.toLowerCase().includes(searchTerm);
+    const descriptionMatches = entry.description && entry.description.toLowerCase().includes(searchTerm);
+    const tagMatches = selectedTag === "" || entry.tag.toLowerCase().includes(selectedTag);
+    return (titleMatches || descriptionMatches) && tagMatches;
+  });
+
+  // Sort the filtered entries
+  const sortedEntries = sortTools(filteredEntries);
+
   return (
-    <div className="bg-bgPrimary w-full px-6 py-6 max-w-7xl mx-auto">
+    <div className="bg-bgPrimary w-full px-6 py-8 max-w-7xl mx-auto">
       <div className="flex flex-col w-full justify-center items-center gap-6 mx-auto rounded-xl">
-        <h2 className="text-2xl font-semibold text-primary">
-          Explore Kubernetes & Cloud Native Tools
-        </h2>
+        <div className="w-full flex flex-col items-center">
+          <h2 className="text-3xl font-bold text-primary mb-2">
+            Cloud Native Tools Collection
+          </h2>
+          <p className="text-grayFill max-w-2xl text-center mb-6">
+            Discover and explore the best tools for Kubernetes and cloud native development
+          </p>
+        </div>
+        
         {error && (
-          <div className="w-full bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-            <span className="block sm:inline">{error}</span>
+          <div className="w-full bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-md relative" role="alert">
+            <div className="flex">
+              <div className="py-1">
+                <svg className="w-6 h-6 mr-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div>
+                <p className="font-bold">API Error</p>
+                <p className="text-sm">{error}</p>
+              </div>
+            </div>
           </div>
         )}
+
         <div className="w-full flex flex-col md:flex-row justify-center items-center gap-4">
           {/* Search Bar */}
           <div className="relative w-full md:w-1/2">
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full bg-bgGray rounded-xl h-12 p-4 text-primary focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
-              placeholder="Search by tool name"
+              className="w-full bg-bgGray rounded-lg h-12 pl-10 pr-4 text-primary focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
+              placeholder="Search by tool name or description"
             />
-            <label className="absolute right-4 top-3 text-xl text-gray-400 pointer-events-none">
-              🔍
-            </label>
           </div>
-          {/* Tag Select */}
-          <div className="w-full md:w-1/3">
-            <select
-              value={selectVal}
-              onChange={(ev) => setSelectVal(ev.target.value)}
-              className="w-full bg-bgGray rounded-xl text-primary p-3 h-12 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
-            >
-              <option value="" className="text-sm">
-                Filter by Tag
-              </option>
-              {dropdownTags.map((tag) => (
-                <option key={tag} value={tag} className="text-sm">
-                  {tag}
+
+          <div className="w-full md:w-1/2 flex flex-col sm:flex-row gap-3">
+            {/* Tag Select */}
+            <div className="w-full">
+              <select
+                value={selectVal}
+                onChange={(ev) => setSelectVal(ev.target.value)}
+                className="w-full bg-bgGray rounded-lg text-primary p-3 h-12 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
+              >
+                <option value="" className="text-sm">
+                  All Categories
                 </option>
-              ))}
-            </select>
+                {dropdownTags.map((tag) => (
+                  <option key={tag} value={tag} className="text-sm">
+                    {tag}
+                  </option>
+                ))}
+              </select>
+            </div>
+            
+            {/* Sort Select */}
+            <div className="w-full sm:w-1/3">
+              <select
+                value={sortBy}
+                onChange={(ev) => setSortBy(ev.target.value)}
+                className="w-full bg-bgGray rounded-lg text-primary p-3 h-12 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-200"
+              >
+                <option value="default">Sort By</option>
+                <option value="stars">Most Stars</option>
+                <option value="az">A-Z</option>
+                <option value="za">Z-A</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Tools Count */}
+      <div className="mt-6 mb-2 text-grayFill">
+        <span className="px-3 py-1 bg-gray-700/30 rounded-full text-xs">
+          {sortedEntries.length} tools found
+        </span>
+      </div>
+
       {/* Tool Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
-        {entries
-          .filter((entry) => {
-            const searchTerm = search.toLowerCase();
-            const selectedTag = selectVal.toLowerCase();
-            const titleMatches = entry.title.toLowerCase().includes(searchTerm);
-            const tagMatches =
-              selectedTag === "" ||
-              entry.tag.toLowerCase().includes(selectedTag);
-            return titleMatches && tagMatches;
-          })
-          .map((entry, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+        {sortedEntries.length > 0 ? (
+          sortedEntries.map((entry, index) => (
             <ToolCard
               entry={entry}
               key={index}
@@ -192,7 +261,16 @@ function ToolsSection() {
               isLoading={isLoading}
               formatStarCount={formatStarCount}
             />
-          ))}
+          ))
+        ) : (
+          <div className="col-span-full flex flex-col items-center justify-center py-12 text-grayFill">
+            <svg className="w-16 h-16 mb-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <p className="text-xl font-medium">No tools found</p>
+            <p className="text-gray-400 mt-2">Try adjusting your search or filter criteria</p>
+          </div>
+        )}
       </div>
     </div>
   );
