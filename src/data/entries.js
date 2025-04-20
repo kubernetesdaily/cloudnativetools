@@ -2651,5 +2651,165 @@ export const entries = [
     description: "K8s ConfigMaps and Secrets Usage",
     github: "cristian98149",
     tag: "Alert and Monitoring"
-  }
+  },
+  // Security Tools - Adding new tools
+  {
+    title: "Falco",
+    link: "https://falco.org/",
+    description: "Cloud Native Runtime Security - detect threats at runtime with open source",
+    github: "falcosecurity/falco",
+    tag: "Security Tools"
+  },
+  {
+    title: "Tetragon",
+    link: "https://github.com/cilium/tetragon",
+    description: "eBPF-based security observability and runtime enforcement for Kubernetes workloads",
+    github: "cilium/tetragon",
+    tag: "Security Tools"
+  },
+  {
+    title: "OPA (Open Policy Agent)",
+    link: "https://www.openpolicyagent.org/",
+    description: "Policy-based control for cloud native environments",
+    github: "open-policy-agent/opa",
+    tag: "Security Tools"
+  },
+  
+  // Networking - Adding new tools
+  {
+    title: "Cilium",
+    link: "https://cilium.io/",
+    description: "eBPF-based Networking, Observability, and Security for Kubernetes",
+    github: "cilium/cilium",
+    tag: "Networking"
+  },
+  {
+    title: "Istio",
+    link: "https://istio.io/",
+    description: "Connect, secure, control, and observe services in Kubernetes",
+    github: "istio/istio",
+    tag: "Service Mesh"
+  },
+  {
+    title: "Linkerd",
+    link: "https://linkerd.io/",
+    description: "Ultra light, ultra simple service mesh for Kubernetes",
+    github: "linkerd/linkerd2",
+    tag: "Service Mesh"
+  },
+  
+  // Development Tools - Adding new tools
+  {
+    title: "Argo CD",
+    link: "https://argoproj.github.io/cd",
+    description: "Declarative continuous deployment for Kubernetes",
+    github: "argoproj/argo-cd",
+    tag: "Continuous Integration & Delivery"
+  },
+  {
+    title: "Backstage",
+    link: "https://backstage.io/",
+    description: "Open platform for building developer portals",
+    github: "backstage/backstage",
+    tag: "Development Tools"
+  },
+  {
+    title: "Flux CD",
+    link: "https://fluxcd.io/",
+    description: "Open and extensible continuous delivery solution for Kubernetes. Powered by GitOps Toolkit",
+    github: "fluxcd/flux2",
+    tag: "Continuous Integration & Delivery"
+  },
+  
+  // Observability & Monitoring - Adding new tools
+  {
+    title: "OpenTelemetry",
+    link: "https://opentelemetry.io/",
+    description: "High-quality, ubiquitous, and portable telemetry to enable effective observability",
+    github: "open-telemetry/opentelemetry-specification",
+    tag: "Monitoring & Observability"
+  },
+  {
+    title: "Jaeger",
+    link: "https://www.jaegertracing.io/",
+    description: "End-to-end distributed tracing and observability",
+    github: "jaegertracing/jaeger",
+    tag: "Monitoring & Observability"
+  },
+  {
+    title: "Thanos",
+    link: "https://thanos.io/",
+    description: "Highly available Prometheus setup with long term storage capabilities",
+    github: "thanos-io/thanos",
+    tag: "Monitoring & Observability"
+  },
+  
+  // Platform Engineering - Adding new category
+  {
+    title: "Crossplane",
+    link: "https://crossplane.io/",
+    description: "Cloud Native Control Planes - build internal cloud platforms and take control of your organization's infrastructure",
+    github: "crossplane/crossplane",
+    tag: "Platform Engineering"
+  },
+  {
+    title: "Gardener",
+    link: "https://gardener.cloud/",
+    description: "Kubernetes-native system managing the full lifecycle of conformant Kubernetes clusters across multiple cloud providers",
+    github: "gardener/gardener",
+    tag: "Platform Engineering"
+  },
+  {
+    title: "Kratix",
+    link: "https://kratix.io/",
+    description: "Open-source framework to build and operate platform capabilities using Kubernetes",
+    github: "syntasso/kratix",
+    tag: "Platform Engineering"
+  },
+  
+  // AI & ML - Adding new tools to AI category
+  {
+    title: "Kubeflow",
+    link: "https://www.kubeflow.org/",
+    description: "Machine Learning toolkit built for Kubernetes",
+    github: "kubeflow/kubeflow",
+    tag: "Artificial Intelligence"
+  },
+  {
+    title: "Seldon Core",
+    link: "https://www.seldon.io/",
+    description: "Machine learning deployment platform for Kubernetes",
+    github: "SeldonIO/seldon-core",
+    tag: "Artificial Intelligence"
+  },
+  
+  // Developer Tools - Adding new tools
+  {
+    title: "K9s",
+    link: "https://k9scli.io/",
+    description: "Kubernetes CLI to manage your clusters in style",
+    github: "derailed/k9s",
+    tag: "Development Tools"
+  },
+  {
+    title: "Lens",
+    link: "https://k8slens.dev/",
+    description: "Kubernetes IDE for managing, troubleshooting, and monitoring Kubernetes clusters",
+    github: "lensapp/lens",
+    tag: "Development Tools"
+  },
+  {
+    title: "Polaris",
+    link: "https://polaris.docs.fairwinds.com/",
+    description: "Validate and enforce best practices in Kubernetes workloads",
+    github: "FairwindsOps/polaris",
+    tag: "Development Tools"
+  },
+  {
+    title: "Goldilocks",
+    link: "https://goldilocks.docs.fairwinds.com/",
+    description: "Identifies a starting point for resource requests and limits for Kubernetes workloads",
+    github: "FairwindsOps/goldilocks",
+    tag: "Development Tools"
+  },
 ];
