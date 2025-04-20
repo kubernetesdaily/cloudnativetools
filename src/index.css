@@ -2,33 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  @apply bg-bgPrimary text-primary;
-}
-
-/* Optional: Add scroll-margin-top to account for sticky navbar height */
-[id] {
-  scroll-margin-top: 4rem; /* Adjust this value based on your navbar height */
-}
-
-.line-clamp-2 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
-
 :root {
     font-family: -apple-system,
         BlinkMacSystemFont,
