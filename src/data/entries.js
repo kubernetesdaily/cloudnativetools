@@ -237,7 +237,7 @@ export const entries = [
   description: "A Kubernetes-native, open-source DevOps platform for CI/CD and GitOps automation",
   github: "devtron-labs",
   tag: "CI/CD Tools"
-}
+},
   // Network & Service Mesh
   {
     title: "Cilium",
