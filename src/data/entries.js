@@ -116,6 +116,20 @@ export const entries = [
     description: "Kubernetes security platform for configuration scanning, risk analysis, and runtime protection",
     github: "kubescape",
     tag: "Security Tools"},
+{
+  title: "ThreatMapper",
+  link: "https://github.com/deepfence/ThreatMapper",
+  description: "Open source runtime vulnerability management tool for Kubernetes, virtual machines, and serverless environments.",
+  github: "deepfence",
+  tag: "Security Tools"
+},
+  {
+  title: "Elkeid",
+  link: "https://github.com/bytedance/Elkeid",
+  description: "Elkeid is a cloud-native Runtime Security Platform designed for security monitoring and protection.",
+  github: "bytedance",
+  tag: "Security Tools"
+},
   {title: "Kyverno",
     link: "https://github.com/nirmata/kyverno",
     description: "Kubernetes Native Policy Management",
