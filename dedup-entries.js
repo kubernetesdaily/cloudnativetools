@@ -25,35 +25,39 @@ fs.readFile(entriesFile, 'utf8', (err, fileContent) => {
 
   // Parse the entries
   let entriesStr = match[1];
-  
-  // Split the entries by objects - looking for '},{' pattern
-  const entriesParts = entriesStr.split(/\},[\s\n]*\{/g);
-  
+
+  // Strip single-line comments so they don't break the object boundary split
+  entriesStr = entriesStr.replace(/^\s*\/\/.*$/gm, '');
+
+  // Split the entries by objects - allow any whitespace between '}' and '{'
+  const entriesParts = entriesStr.split(/\},\s*\{/g);
+
   const uniqueEntries = [];
   const seenTitles = new Set();
   let duplicateCount = 0;
-  
+
   // Process each entry
   entriesParts.forEach((part, index) => {
-    // Clean up the part
-    let cleanPart = part;
-    if (index === 0) {
-      cleanPart = part.trim();
-    } else if (index === entriesParts.length - 1) {
-      cleanPart = part.trim();
-    } else {
-      cleanPart = part.trim();
+    // Strip the leading '{' from the first chunk and the trailing '}' from
+    // the last chunk so every chunk is the bare object body. The split on
+    // '},{' already removed the inner braces.
+    let cleanPart = part.trim();
+    if (index === 0 && cleanPart.startsWith('{')) {
+      cleanPart = cleanPart.slice(1).trim();
     }
-    
+    if (index === entriesParts.length - 1 && cleanPart.endsWith('}')) {
+      cleanPart = cleanPart.slice(0, -1).trim();
+    }
+
     // Extract title
     const titleMatch = cleanPart.match(/title:\s*["']([^"']*)["']/);
     if (!titleMatch) {
       uniqueEntries.push(cleanPart);
       return;
     }
-    
+
     const title = titleMatch[1];
-    
+
     if (!seenTitles.has(title)) {
       seenTitles.add(title);
       uniqueEntries.push(cleanPart);
@@ -62,18 +66,18 @@ fs.readFile(entriesFile, 'utf8', (err, fileContent) => {
       console.log(`Found duplicate: ${title}`);
     }
   });
-  
+
   console.log(`Found ${duplicateCount} duplicates.`);
-  
+
   // Reconstruct the entries array
   const newEntriesStr = uniqueEntries.join('},\n  {');
-  const newFileContent = 
-    fileContent.substring(0, match.index) + 
-    'export const entries = [\n  {' + 
-    newEntriesStr + 
-    '}\n];' + 
+  const newFileContent =
+    fileContent.substring(0, match.index) +
+    'export const entries = [\n  {' +
+    newEntriesStr +
+    '}\n];' +
     fileContent.substring(match.index + match[0].length);
-  
+
   // Write the result back to file
   fs.writeFile(entriesFile, newFileContent, 'utf8', (err) => {
     if (err) {
